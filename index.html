@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-section" class="container">
+        <h1>Login</h1>
+        <input type="text" id="username" class="input-field" placeholder="Username" required>
+        <input type="password" id="password" class="input-field" placeholder="Password" required>
+        <button onclick="login()" class="btn">Login</button>
+        <button onclick="showPasswordReset()" class="btn btn-secondary">Forgot Password</button>
+    </div>
+
+    <div id="password-reset-section" class="container hidden">
+        <h1>Password Reset</h1>
+        <input type="text" id="reset-username" class="input-field" placeholder="Username" required>
+        <input type="password" id="reset-master-password" class="input-field" placeholder="Master Password" required>
+        <button onclick="resetPassword()" class="btn">Reset Password</button>
+        <button onclick="hidePasswordReset()" class="btn btn-secondary">Back to Login</button>
+    </div>
+
+    <div id="attendance-section" class="container hidden">
+        <h1>Attendance</h1>
+        <h2>Welcome, <span id="staff-name"></span></h2>
+        <button id="in-time-btn" onclick="markAttendance('in')" class="btn">Mark In Time</button>
+        <button id="out-time-btn" onclick="markAttendance('out')" class="btn">Mark Out Time</button>
+        <button onclick="changePassword()" class="btn btn-secondary">Change Password</button>
+        <button onclick="logout()" class="btn btn-secondary">Logout</button>
+    </div>
+
+    <div id="admin-section" class="container hidden">
+        <h1>Admin Section</h1>
+        <div class="form-section">
+            <h2>Add New Staff</h2>
+            <input type="text" id="new-staff-name" class="input-field" placeholder="New Staff Name">
+            <button onclick="addNewStaff()" class="btn">Add Staff</button>
+        </div>
+        <div class="form-section">
+            <h2>Remove Staff</h2>
+            <select id="remove-staff-select" class="input-field"></select>
+            <button onclick="removeStaff()" class="btn">Remove Staff</button>
+        </div>
+        <div id="report-section" class="form-section"></div>
+        <button onclick="exportAllStaffReports()" class="btn">Export All Staff Reports</button>
+        <button onclick="changePassword()" class="btn btn-secondary">Change Password</button>
+        <button onclick="logout()" class="btn btn-secondary">Logout</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
